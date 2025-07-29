@@ -1,11 +1,10 @@
 const progressThumb = document.getElementById('progressThumb');
 
-        // ドラッグ関連の変数
-        let isDragging = false;
-        let wasPlaying = false;            .counters {
-                justify-content: flex-end;
-                gap: 10px;
-            }<!DOCTYPE html>
+// ドラッグ関連の変数
+let isDragging = false;
+let wasPlaying = false;
+    
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -339,8 +338,8 @@ const progressThumb = document.getElementById('progressThumb');
         const volumeSlider = document.getElementById('volumeSlider');
         const volumeIcon = document.getElementById('volumeIcon');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const visitCounter = document.getElementById('visitCounter');
-        const playCounter = document.getElementById('playCounter');
+        // const visitCounter = document.getElementById('visitCounter');
+        // const playCounter = document.getElementById('playCounter');
         const progressThumb = document.getElementById('progressThumb');
 
         // ドラッグ関連の変数
@@ -348,23 +347,23 @@ const progressThumb = document.getElementById('progressThumb');
         let wasPlaying = false;
 
         // カウンター初期化
-        let visitCount = 0;
-        let playCount = 0;
+        // let visitCount = 0;
+        // let playCount = 0;
 
         // サイト訪問回数を更新（ページ読み込み時）
-        function updateVisitCount() {
-            visitCount++;
-            visitCounter.textContent = visitCount;
-        }
+        // function updateVisitCount() {
+        //     visitCount++;
+        //     visitCounter.textContent = visitCount;
+        // }
 
         // 動画再生回数を更新
-        function updatePlayCount() {
-            playCount++;
-            playCounter.textContent = playCount;
-        }
+        // function updatePlayCount() {
+        //     playCount++;
+        //     playCounter.textContent = playCount;
+        // }
 
         // ページ読み込み時に訪問回数を更新
-        updateVisitCount();
+        // updateVisitCount();
 
         // 再生/一時停止機能
         playPauseBtn.addEventListener('click', () => {
@@ -549,9 +548,9 @@ const progressThumb = document.getElementById('progressThumb');
         });
 
         // 動画が再生開始された時にカウント
-        video.addEventListener('play', () => {
-            updatePlayCount();
-        });
+        // video.addEventListener('play', () => {
+        //     updatePlayCount();
+        // });
 
         // 初期化
         updateVolumeIcon(video.volume);
