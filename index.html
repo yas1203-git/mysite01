@@ -1,9 +1,3 @@
-const progressThumb = document.getElementById('progressThumb');
-
-// ドラッグ関連の変数
-let isDragging = false;
-let wasPlaying = false;
-    
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -32,39 +26,10 @@ let wasPlaying = false;
         h1 {
             color: #333;
             text-align: center;
-            margin-bottom: 5px;
-            font-size: 2.0em;
+            /* margin-bottom: 10px; */
+            margin: 0 0 10px 0;
+            font-size: 1.8em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .counters {
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .counter-box {
-            background: rgba(108, 117, 125, 0.1);
-            color: #6c757d;
-            padding: 5px 10px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 11px;
-            border: 1px solid rgba(108, 117, 125, 0.2);
-        }
-
-        .counter-label {
-            font-size: 10px;
-            font-weight: 400;
-            margin-bottom: 2px;
-            opacity: 0.8;
-        }
-
-        .counter-value {
-            font-size: 12px;
-            font-weight: 500;
-            color: #6c757d;
         }
 
         .video-container {
@@ -140,12 +105,12 @@ let wasPlaying = false;
             border-radius: 2px;
             outline: none;
             appearance: none;
-            -webkit-appearance: none; /* Safari対応 */
+            -webkit-appearance: none;
         }
 
         .volume-slider::-webkit-slider-thumb {
             appearance: none;
-            -webkit-appearance: none; /* Safari対応 */
+            -webkit-appearance: none;
             width: 16px;
             height: 16px;
             background: #007bff;
@@ -219,30 +184,6 @@ let wasPlaying = false;
             border-radius: 4px;
         }
 
-        .feature-list {
-            background: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #007bff;
-        }
-
-        .feature-list h3 {
-            color: #007bff;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .feature-list ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-
-        .feature-list li {
-            margin: 8px 0;
-            color: #495057;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -250,7 +191,7 @@ let wasPlaying = false;
             }
             
             h1 {
-                font-size: 2em;
+                font-size: 1.5em;
             }
             
             .custom-controls {
@@ -286,17 +227,6 @@ let wasPlaying = false;
     <div class="container">
         <h1>智紀 history</h1>
 
-        <!-- <div class="counters">
-            <div class="counter-box">
-                <div class="counter-label">サイト訪問回数</div>
-                <div class="counter-value" id="visitCounter">0</div>
-            </div>
-            <div class="counter-box">
-                <div class="counter-label">動画再生回数</div>
-                <div class="counter-value" id="playCounter">0</div>
-            </div>
-        </div> -->
-
         <div class="video-container">
             <video id="customVideo">
                 <source src="tomo_video_09.mp4" type="video/mp4">
@@ -323,8 +253,6 @@ let wasPlaying = false;
                 <button class="control-btn" id="fullscreenBtn">⛶ 全画面</button>
             </div>
         </div>
-
-
     </div>
 
     <script>
@@ -338,32 +266,11 @@ let wasPlaying = false;
         const volumeSlider = document.getElementById('volumeSlider');
         const volumeIcon = document.getElementById('volumeIcon');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
-        // const visitCounter = document.getElementById('visitCounter');
-        // const playCounter = document.getElementById('playCounter');
         const progressThumb = document.getElementById('progressThumb');
 
         // ドラッグ関連の変数
         let isDragging = false;
         let wasPlaying = false;
-
-        // カウンター初期化
-        // let visitCount = 0;
-        // let playCount = 0;
-
-        // サイト訪問回数を更新（ページ読み込み時）
-        // function updateVisitCount() {
-        //     visitCount++;
-        //     visitCounter.textContent = visitCount;
-        // }
-
-        // 動画再生回数を更新
-        // function updatePlayCount() {
-        //     playCount++;
-        //     playCounter.textContent = playCount;
-        // }
-
-        // ページ読み込み時に訪問回数を更新
-        // updateVisitCount();
 
         // 再生/一時停止機能
         playPauseBtn.addEventListener('click', () => {
@@ -546,11 +453,6 @@ let wasPlaying = false;
                 }
             }
         });
-
-        // 動画が再生開始された時にカウント
-        // video.addEventListener('play', () => {
-        //     updatePlayCount();
-        // });
 
         // 初期化
         updateVolumeIcon(video.volume);
